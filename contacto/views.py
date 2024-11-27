@@ -15,8 +15,14 @@ def contacts(request):
             email = request.POST.get("email")
             contenido = request.POST.get("contenido")
             
-            email = EmailMessage('Mensaje desde app Django')
-            
-            return redirect("/contacto/?valido")
+            email = EmailMessage('Mensaje desde app Django',
+                                 'El usuario con nombre {} con la direccion {} escribe lo siguiente\n\n {}'
+                                 .format(nombre,email,contenido),"",['rojassucarinomiguelantonio'],
+                                 reply_to=[email])
+            try:
+                email.send()
+                return redirect("/contacto/?valido")
+            except:
+                return redirect("/contacto/?novalido")
     
     return render(request, "contacto/contacto.html", {"miFormulario": formulario_contacto})
