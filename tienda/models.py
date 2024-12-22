@@ -10,7 +10,7 @@ class CategoriaProduct(models.Model):
 
     class Meta:
         verbose_name="categoriaProduct"
-        verbose_name_="categoriaProducts"
+        verbose_name_plural="categoriaProducts"
 
     def __str__(self):
         return self.nombre
@@ -26,4 +26,4 @@ class Producto(models.Model):
 
     class Meta:
         verbose_name="Producto"
-        verbose_name_="Productos"
+        verbose_name_plural="Productos"
