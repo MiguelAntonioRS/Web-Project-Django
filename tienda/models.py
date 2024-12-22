@@ -20,12 +20,12 @@ class Producto(models.Model):
     
     nombre = models.CharField(max_length=50)
     categorias = models.ForeignKey(CategoriaProduct, on_delete=models.CASCADE)   
-    imagen = models.ImageField(upload_to="tienda", null=True, blank=True)
+    imagen = models.ImageField(upload_to="tienda")
     precio = models.FloatField()
-    disponibilidad = models.BooleanField(default=True)
+    disponibilidad = models.BooleanField(default=True, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name="Producto"
-        verbose_name_plural="Productos"
+        verbose_name="producto"
+        verbose_name_plural="productos"
