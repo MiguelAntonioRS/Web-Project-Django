@@ -18,3 +18,15 @@ class Carro:
                 "cantidad":1,
                 "imagen":producto.imagen.url
             }
+        else:
+            for key, value in self.carro.items():
+                if key==str(producto.id):
+                    value["cantidad"]=value["cantidad"]+1
+                    break
+        self.guardarCarro()
+
+    def guardarCarro(self):
+        self.session["carro"] = self.carro
+        self.session.modified = True               
+
+        
