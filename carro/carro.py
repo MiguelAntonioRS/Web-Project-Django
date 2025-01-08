@@ -43,3 +43,7 @@ class Carro:
                         self.eliminarCarro(producto)
                     break
         self.guardarCarro()        
+
+    def limpiarCarro(self):
+        self.session["carro"] = {}
+        self.session.modified = True    
