@@ -24,3 +24,13 @@ def eliminar_producto(request, producto_id):
     carro.eliminarCarro(producto=producto)
     
     return redirect("tienda")
+
+def restar_producto(request, producto_id):
+    
+    carro = Carro(request)
+    
+    producto = Producto.objects.get(id=producto_id)
+    
+    carro.restarProducto(producto=producto)
+    
+    return redirect("tienda")
