@@ -3,7 +3,13 @@
 {% load static%}
 {% block content %}
 <div class="container">
+
+  <div style="float: right;">
+      <p style="color: white;">Total {{importe_total_carro}}</p>
+  </div>
+
   <div class="row">
+
     {% for producto in productos %}
 
   <div class="col-md-3 mt-2">
